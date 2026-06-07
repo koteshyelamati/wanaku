@@ -1,0 +1,14 @@
+- route:
+    description: Send a message to an AWS SQS queue and wait for a reply
+        from:
+              uri: direct:wanaku
+                  steps:
+                        - to:
+                                  uri: aws2-sqs
+                                            parameters:
+                                                        queueNameOrArn: "{{request.queue}}"
+                                                                    accessKey: "{{aws.access.key}}"
+                                                                                secretKey: "{{aws.secret.key}}"
+                                                                                            region: "{{aws.region}}"
+                                                                                                        replyToQueueNameOrArn: "{{reply.queue}}"
+                                                                                                            id: aws-sqs-tool
