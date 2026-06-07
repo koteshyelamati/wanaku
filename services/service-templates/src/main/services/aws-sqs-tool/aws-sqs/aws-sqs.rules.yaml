@@ -1,0 +1,11 @@
+mcp:
+  tools:
+  - aws-sqs:
+      route:
+        id: "aws-sqs-tool"
+        description: "Send a message to an AWS SQS queue with request/reply pattern"
+      properties:
+      - name: wanaku_body
+        type: string
+        description: The message payload to send to the SQS queue
+        required: true
